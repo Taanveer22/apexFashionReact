@@ -31,7 +31,7 @@ function App() {
       <Navbar></Navbar>
       <div className="flex justify-between">
         <AllProducts></AllProducts>
-        <CartContainer handleActiveButton={handleActiveButton}></CartContainer>
+        <CartContainer handleActiveButton={handleActiveButton} isActive={isActive}></CartContainer>
       </div>
     </div>
   );
