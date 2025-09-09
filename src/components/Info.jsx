@@ -1,6 +1,6 @@
 const Info = ({ selectedProducts, handleDeleteButton }) => {
   // console.log(selectedProducts);
-  console.log(handleDeleteButton);
+  // console.log(handleDeleteButton);
   return (
     <div>
       {selectedProducts.map((item) => (

@@ -1,7 +1,12 @@
 import Info from "./Info";
 import Task from "./Task";
 
-const CartContainer = ({ handleActiveButton, isActive, selectedProducts, handleDeleteButton }) => {
+const CartContainer = ({
+  handleActiveButton,
+  isActive,
+  selectedProducts,
+  handleDeleteButton,
+}) => {
   // console.log(handleActiveButton);
   // console.log(isActive);
   // console.log(selectedProducts);
@@ -24,7 +29,10 @@ const CartContainer = ({ handleActiveButton, isActive, selectedProducts, handleD
         </button>
       </div>
       {isActive.info ? (
-        <Info handleDeleteButton={handleDeleteButton} selectedProducts={selectedProducts}></Info>
+        <Info
+          handleDeleteButton={handleDeleteButton}
+          selectedProducts={selectedProducts}
+        ></Info>
       ) : (
         <Task></Task>
       )}
