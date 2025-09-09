@@ -1,13 +1,13 @@
 import Info from "./Info";
 import Task from "./Task";
 
-const CartContainer = ({ handleActiveButton, isActive }) => {
+const CartContainer = ({ handleActiveButton, isActive, selectedProducts }) => {
   // console.log(handleActiveButton);
   // console.log(isActive);
   return (
-    <div>
-      <h1 className="text-4xl font-bold">Cartcontainer </h1>
-      <div className="flex items-center justify-between">
+    <div className="w-full sm:w-2/5">
+      <h1 className="text-4xl font-bold mb-5 text-center">Cartcontainer </h1>
+      <div className="flex items-center justify-between m-5">
         <button
           onClick={() => handleActiveButton("info-button")}
           className={`${isActive.info ? "btn btn-success" : "btn"}`}
@@ -21,7 +21,11 @@ const CartContainer = ({ handleActiveButton, isActive }) => {
           Task
         </button>
       </div>
-      {isActive.info ? <Info></Info> : <Task></Task>}
+      {isActive.info ? (
+        <Info selectedProducts={selectedProducts}></Info>
+      ) : (
+        <Task></Task>
+      )}
     </div>
   );
 };

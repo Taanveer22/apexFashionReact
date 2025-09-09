@@ -1,6 +1,5 @@
-import React from "react";
-
 const Navbar = ({ selectedProducts }) => {
+  // console.log(selectedProducts);
   return (
     <div className="flex justify-between items-center my-5 text-2xl font-bold text-green-500">
       <h1>Apex Fashion</h1>

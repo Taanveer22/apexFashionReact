@@ -48,6 +48,7 @@ function App() {
           handleSelectedProducts={handleSelectedProducts}
         ></AllProducts>
         <CartContainer
+          selectedProducts={selectedProducts}
           handleActiveButton={handleActiveButton}
           isActive={isActive}
         ></CartContainer>

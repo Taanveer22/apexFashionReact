@@ -5,7 +5,7 @@ const SingleProduct = ({ element, handleSelectedProducts }) => {
     <div>
       <div className="card bg-slate-300 shadow-sm m-5">
         <figure className="px-10 pt-10">
-          <img src={image} className="rounded-xl w-full h-60" />
+          <img src={image} className="rounded-xl w-full h-32" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{title}</h2>
