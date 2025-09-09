@@ -38,7 +38,15 @@ function App() {
       setSelectedProducts(newSelectedProducts);
     }
   };
-  console.log(selectedProducts);
+  // console.log(selectedProducts);
+
+  const handleDeleteButton = (clickedId) => {
+    // console.log(id);
+    const remainingSelectedProducts = selectedProducts.filter(
+      (element) => element.id !== clickedId
+    );
+    setSelectedProducts(remainingSelectedProducts);
+  };
 
   return (
     <div className="w-11/12 mx-auto">
@@ -48,6 +56,7 @@ function App() {
           handleSelectedProducts={handleSelectedProducts}
         ></AllProducts>
         <CartContainer
+          handleDeleteButton={handleDeleteButton}
           selectedProducts={selectedProducts}
           handleActiveButton={handleActiveButton}
           isActive={isActive}

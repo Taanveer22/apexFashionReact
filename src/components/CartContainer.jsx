@@ -1,9 +1,11 @@
 import Info from "./Info";
 import Task from "./Task";
 
-const CartContainer = ({ handleActiveButton, isActive, selectedProducts }) => {
+const CartContainer = ({ handleActiveButton, isActive, selectedProducts, handleDeleteButton }) => {
   // console.log(handleActiveButton);
   // console.log(isActive);
+  // console.log(selectedProducts);
+  // console.log(handleDeleteButton);
   return (
     <div className="w-full sm:w-2/5">
       <h1 className="text-4xl font-bold mb-5 text-center">Cartcontainer </h1>
@@ -22,7 +24,7 @@ const CartContainer = ({ handleActiveButton, isActive, selectedProducts }) => {
         </button>
       </div>
       {isActive.info ? (
-        <Info selectedProducts={selectedProducts}></Info>
+        <Info handleDeleteButton={handleDeleteButton} selectedProducts={selectedProducts}></Info>
       ) : (
         <Task></Task>
       )}
