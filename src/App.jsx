@@ -9,6 +9,7 @@ function App() {
     info: true,
     status: "active",
   });
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   const handleActiveButton = (status) => {
     if (status === "info-button") {
@@ -23,15 +24,34 @@ function App() {
       });
     }
   };
+  // console.log(isActive);
 
-  console.log(isActive);
+  const handleSelectedProducts = (element) => {
+    console.log(element);
+    const isExist = selectedProducts.find(
+      (existElement) => existElement.id === element.id
+    );
+    if (isExist) {
+      alert("product already added");
+    } else {
+      // alert("successfully product added");
+      const newSelectedProducts = [...selectedProducts, element];
+      setSelectedProducts(newSelectedProducts);
+    }
+  };
+  console.log(selectedProducts);
 
   return (
     <div className="w-11/12 mx-auto">
       <Navbar></Navbar>
       <div className="flex justify-between">
-        <AllProducts></AllProducts>
-        <CartContainer handleActiveButton={handleActiveButton} isActive={isActive}></CartContainer>
+        <AllProducts
+          handleSelectedProducts={handleSelectedProducts}
+        ></AllProducts>
+        <CartContainer
+          handleActiveButton={handleActiveButton}
+          isActive={isActive}
+        ></CartContainer>
       </div>
     </div>
   );
