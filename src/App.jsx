@@ -44,11 +44,11 @@ function App() {
 
   const handleDeleteButton = (clickedId) => {
     // console.log(id);
-    handleDecreasePrice(clickedId);
     const remainingSelectedProducts = selectedProducts.filter(
       (element) => element.id !== clickedId
     );
     setSelectedProducts(remainingSelectedProducts);
+    handleDecreasePrice(clickedId);
   };
 
   const handleIncreasePrice = (price) => {
@@ -57,10 +57,9 @@ function App() {
   };
 
   const handleDecreasePrice = (id) => {
-    console.log(id);
-    const product = selectedProducts.find((pro) => pro.id === id);
-    let productPrice = product.price;
-    setCartPrice(cartPrice - productPrice);
+    // console.log(id);
+    const deletedProduct = selectedProducts.find((pro) => pro.id === id);
+    setCartPrice(cartPrice - deletedProduct.price);
   };
 
   return (
@@ -69,7 +68,7 @@ function App() {
         cartPrice={cartPrice}
         selectedProducts={selectedProducts}
       ></Navbar>
-      <div className="flex justify-between">
+      <div className="flex flex-col lg:flex-row justify-between">
         <AllProducts
           handleSelectedProducts={handleSelectedProducts}
         ></AllProducts>
